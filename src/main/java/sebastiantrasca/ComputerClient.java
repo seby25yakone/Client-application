@@ -47,11 +47,12 @@ public class ComputerClient {
         String compname = sc.nextLine();
         System.out.println("Enter client computer memory: ");
         Byte mem = sc.nextByte();
+        sc.nextLine();
         System.out.println("Enter client computer's available technologies: ");
         List<String> techs = new ArrayList<>();
-        techs.add(sc.nextLine());
-        while(!sc.nextLine().isEmpty()){
-            techs.add(sc.nextLine());
+        String tech;
+        while (!(tech = sc.nextLine()).isEmpty()) {
+            techs.add(tech);
         }
         ComputerClient client = new ComputerClient("127.0.0.1", 8080,name, compname, mem, techs);
     }

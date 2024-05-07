@@ -2,6 +2,7 @@ package sebastiantrasca;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class Computer implements Serializable {
@@ -10,12 +11,14 @@ public class Computer implements Serializable {
     private String username;
     private String computer_name;
     private Byte memory;
+    private String connectionTime;
     private List<String> technologies; //list of available technologies on the computer, i.e "java", "python", "php" etc.
 
     public Computer(String user, String cn, Byte mem, List<String> techs){
         username = user;
         computer_name = cn;
         memory = mem;
+        connectionTime = LocalDateTime.now().toString();
         technologies = techs;
     }
 
@@ -59,6 +62,10 @@ public class Computer implements Serializable {
         if(technologies.contains(tech.trim().toLowerCase())){
             technologies.remove(tech.trim().toLowerCase());
         }
+    }
+    public String toString(){
+        return "Username: " + this.username + "\nComputer name: " + this.computer_name + "\nRAM Memory: " +
+                this.memory + "\nAvailable technologies: " + this.technologies + "\nTime of connection: " + connectionTime;
     }
 
 }
