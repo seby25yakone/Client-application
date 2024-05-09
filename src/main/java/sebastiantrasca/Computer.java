@@ -1,5 +1,8 @@
 package sebastiantrasca;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -14,12 +17,20 @@ public class Computer implements Serializable {
     private String connectionTime;
     private List<String> technologies; //list of available technologies on the computer, i.e "java", "python", "php" etc.
 
-    public Computer(String user, String cn, Byte mem, List<String> techs){
-        username = user;
-        computer_name = cn;
-        memory = mem;
+    public Computer(){
+        username = "unknown";
+        computer_name = "unknown";
+        memory = 0;
+        connectionTime = "N/A";
+        technologies = null;
+    }
+    @JsonCreator
+    public Computer(@JsonProperty("username") String username, @JsonProperty("computer_name") String compname, @JsonProperty("memory") Byte memory, @JsonProperty("technologies") List<String> technologies){
+        this.username = username;
+        this.computer_name = compname;
+        this.memory = memory;
         connectionTime = LocalDateTime.now().toString();
-        technologies = techs;
+        this.technologies = technologies;
     }
 
     public String getUsername() {

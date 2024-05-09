@@ -1,4 +1,6 @@
 package sebastiantrasca;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.*;
 import java.net.*;
 import java.util.ArrayList;
@@ -9,7 +11,6 @@ public class ComputerClient {
     private Socket clientSocket;
     private BufferedReader in;
     private DataOutputStream out;
-    private ObjectOutputStream compout;
     private Computer clientComputer;
     public ComputerClient(String ip, int port, String name, String compname, Byte mem, List<String> techs) throws IOException{
         clientComputer = new Computer(name, compname, mem, techs);
@@ -17,8 +18,13 @@ public class ComputerClient {
         System.out.println("Connected");
         in = new BufferedReader(new InputStreamReader(System.in));
         out = new DataOutputStream(clientSocket.getOutputStream());
-        compout = new ObjectOutputStream(clientSocket.getOutputStream());
-        compout.writeObject(clientComputer);
+        ObjectMapper mapper = new ObjectMapper();
+        String json = mapper.writeValueAsString(clientComputer);
+        System.out.println(json);
+        out.writeInt(json.length());
+        out.write(json.getBytes());
+        out.flush();
+
         String line;
         try{
             line = in.readLine();

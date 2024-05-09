@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96cf8751-30c4-4213-bbc6-ddff184b7324" name="Changes" comment="initial commit">
+    <list default="true" id="96cf8751-30c4-4213-bbc6-ddff184b7324" name="Changes" comment="added datetime">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Computer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Computer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sebastiantrasca/ComputerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sebastiantrasca/ComputerClient.java" afterDir="false" />
     </list>
@@ -22,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
@@ -39,9 +45,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "json",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/java/ClientServer3 - Threads/ComputerClient",
+    "last_opened_file_path": "C:/java/ClientServer3 - Threads/ComputerServer",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,7 +75,9 @@
       <workItem from="1714652189477" duration="2151000" />
       <workItem from="1714655345107" duration="1897000" />
       <workItem from="1715081588470" duration="20000" />
-      <workItem from="1715081972007" duration="718000" />
+      <workItem from="1715081972007" duration="4165000" />
+      <workItem from="1715262246731" duration="820000" />
+      <workItem from="1715263082151" duration="1963000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -79,7 +87,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714656797368</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added datetime">
+      <option name="closed" value="true" />
+      <created>1715082786957</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715082786957</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,6 +103,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="added datetime" />
+    <option name="LAST_COMMIT_MESSAGE" value="added datetime" />
   </component>
 </project>
