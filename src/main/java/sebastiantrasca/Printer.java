@@ -1,5 +1,6 @@
 package sebastiantrasca;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Printer {
@@ -10,7 +11,7 @@ public class Printer {
     private String color;
     private String format;
     private String connectionType;
-
+    @JsonCreator
     public Printer(@JsonProperty("type") String type, @JsonProperty("resolution") String resolution, @JsonProperty("colorSpeed") int colorSpeed,@JsonProperty("monoSpeed") int monoSpeed, @JsonProperty("color") String color,@JsonProperty("format") String format, @JsonProperty("connectionType") String connectionType) {
         this.type = type;
         this.resolution = resolution;
