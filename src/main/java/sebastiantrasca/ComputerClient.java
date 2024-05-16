@@ -24,7 +24,6 @@ public class ComputerClient {
         out.writeInt(json.length());
         out.write(json.getBytes());
         out.flush();
-
         String line;
         try{
             line = in.readLine();
