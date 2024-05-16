@@ -11,9 +11,9 @@ public class ComputerClient {
     private Socket clientSocket;
     private BufferedReader in;
     private DataOutputStream out;
-    private Computer clientComputer;
+    private Record<Type> clientDevice;
     public ComputerClient(String ip, int port, String name, String compname, Byte mem, List<String> techs) throws IOException{
-        clientComputer = new Computer(name, compname, mem, techs);
+        clientDevice = new Record<>();
         clientSocket = new Socket(ip, port);
         System.out.println("Connected");
         in = new BufferedReader(new InputStreamReader(System.in));
@@ -46,20 +46,35 @@ public class ComputerClient {
 
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter client username: ");
-        String name = sc.nextLine();
-        System.out.println("Enter client computer name: ");
-        String compname = sc.nextLine();
-        System.out.println("Enter client computer memory: ");
-        Byte mem = sc.nextByte();
-        sc.nextLine();
-        System.out.println("Enter client computer's available technologies: ");
-        List<String> techs = new ArrayList<>();
-        String tech;
-        while (!(tech = sc.nextLine()).isEmpty()) {
-            techs.add(tech);
+        while(true){
+            System.out.println("Enter device type(C for Computer, P for Printer, R for Router): ");
+            String line = sc.nextLine();
+            if(line.toLowerCase().equals("c")){
+                System.out.println("Does your computer have a CDROM? (True/false)");
+                boolean cdRom = sc.nextBoolean();
+                System.out.println("Enter CD speed (0 if you have no CDROM): ");
+                double cdSpeed = sc.nextDouble();
+                System.out.println("Enter chassis type: ");
+                String chassisType = sc.nextLine();
+                System.out.println("Enter CPU Core count: ");
+                int cpuCoreCount = sc.nextInt();
+                System.out.println("Enter number of CPU threads: ");
+                int cpuCoreThread = sc.nextInt();
+                System.out.println("Enter number of CPUs: ");
+                int cpuCount = sc.nextInt();
+                System.out.println("Enter CPU name: ");
+                String cpuName = sc.nextLine();
+            }
+            else if(line.toLowerCase().equals("p")){
+
+            }
+            else if (line.toLowerCase().equals("r")){
+
+            }
+            else System.out.println("Not a valid option!");
         }
-        ComputerClient client = new ComputerClient("127.0.0.1", 8080,name, compname, mem, techs);
+
+
     }
 
 }
