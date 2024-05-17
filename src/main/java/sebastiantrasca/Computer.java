@@ -70,4 +70,72 @@ public class Computer{
                 ", isVirtual=" + isVirtual +
                 '}';
     }
+
+    public boolean isCdRom() {
+        return cdRom;
+    }
+
+    public double getCdSpeed() {
+        return cdSpeed;
+    }
+
+    public String getChassisType() {
+        return chassisType;
+    }
+
+    public int getCpuCoreCount() {
+        return cpuCoreCount;
+    }
+
+    public int getCpuCoreThread() {
+        return cpuCoreThread;
+    }
+
+    public int getCpuCount() {
+        return cpuCount;
+    }
+
+    public String getCpuName() {
+        return cpuName;
+    }
+
+    public double getCpuSpeed() {
+        return cpuSpeed;
+    }
+
+    public String getCpuType() {
+        return cpuType;
+    }
+
+    public int getDiskSpace() {
+        return diskSpace;
+    }
+
+    public boolean isFloppy() {
+        return floppy;
+    }
+
+    public String getFormFactor() {
+        return formFactor;
+    }
+
+    public String getOperatingSystem() {
+        return operatingSystem;
+    }
+
+    public Byte getOsAddressWidth() {
+        return osAddressWidth;
+    }
+
+    public String getOsVersion() {
+        return osVersion;
+    }
+
+    public int getRam() {
+        return ram;
+    }
+
+    public boolean isVirtual() {
+        return isVirtual;
+    }
 }

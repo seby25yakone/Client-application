@@ -4,8 +4,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.*;
 import java.net.*;
 import java.sql.SQLOutput;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class ComputerClient {
@@ -17,6 +19,11 @@ public class ComputerClient {
         clientDevice = device;
         clientSocket = new Socket(ip, port);
         System.out.println("Connected");
+        Instant now = Instant.now();
+        Random rand = new Random();
+        Long randlong = rand.nextLong()+1L;
+        long id = now.getEpochSecond()/(randlong*1000) + rand.nextLong()*3400;
+        clientDevice.setId(id);
         in = new BufferedReader(new InputStreamReader(System.in));
         out = new DataOutputStream(clientSocket.getOutputStream());
         ObjectMapper mapper = new ObjectMapper();
@@ -47,6 +54,7 @@ public class ComputerClient {
 
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
+        ObjectMapper mapper = new ObjectMapper();
         while(true){
             System.out.println("Enter device type(C for Computer, P for Printer, R for Router): ");
             String line = sc.nextLine();
@@ -86,7 +94,8 @@ public class ComputerClient {
                 System.out.println("Is this computer a virtual machine? (True/false): ");
                 boolean isVirtual = sc.nextBoolean();
                 Computer clientComp = new Computer(cdRom,cdSpeed,chassisType,cpuCoreCount,cpuCoreThread,cpuCount, cpuName, cpuSpeed, cpuType, diskSpace, floppy, formFactor, operatingSystem, osAddressWidth, osVersion, ram, isVirtual);
-                Record<Computer> device = new Record<>(0, Type.COMPUTER, clientComp);
+                String json = mapper.writeValueAsString(clientComp);
+                Record<Computer> device = new Record<>(0, Type.COMPUTER, json);
                 ComputerClient client = new ComputerClient("127.0.0.1", 8080, device);
                 break;
             }
@@ -101,17 +110,41 @@ public class ComputerClient {
                 double colorSpeed = sc.nextDouble();
                 System.out.println("Enter b&w printing speed: ");
                 double monoSpeed = sc.nextDouble();
+                sc.nextLine();
                 System.out.println("Enter primary paper format: ");
                 String format = sc.nextLine();
                 System.out.println("Enter printer connection type(s): ");
                 String connectionType = sc.nextLine();
                 Printer clientPrinter = new Printer(printerType,resolution,color,colorSpeed,monoSpeed,format,connectionType);
-                Record<Printer> device = new Record<>(0,Type.PRINTER, clientPrinter);
+                String json = mapper.writeValueAsString(clientPrinter);
+                Record<Printer> device = new Record<>(0,Type.PRINTER, json);
                 ComputerClient client = new ComputerClient("127.0.0.1", 8080, device);
                 break;
             }
             else if (line.toLowerCase().equals("r")){
-
+                System.out.println("Enter number of LAN ports: ");
+                int lanPorts = sc.nextInt();
+                System.out.println("Enter number of WAN ports: ");
+                int wanPorts = sc.nextInt();
+                System.out.println("Enter Ethernet transfer rate: ");
+                int ethernetRate = sc.nextInt();
+                System.out.println("Enter Wi-Fi transfer rate: ");
+                int wifiRate = sc.nextInt();
+                System.out.println("Enter antenna type: ");
+                String antennaeType = sc.nextLine();
+                System.out.println("Enter frequency: ");
+                int frequency = sc.nextInt();
+                System.out.println("Does the router have a USB port? (True/false): ");
+                boolean usbPort = sc.nextBoolean();
+                System.out.println("Enter Wi-Fi standard: ");
+                String wifiStandard = sc.nextLine();
+                System.out.println("Enter security protocol(s): ");
+                String security = sc.nextLine();
+                Router clientRouter = new Router(lanPorts,wanPorts,ethernetRate,wifiRate,antennaeType,frequency,usbPort,wifiStandard,security);
+                String json = mapper.writeValueAsString(clientRouter);
+                Record<Router> device = new Record<Router>(0, Type.ROUTER, json);
+                ComputerClient client = new ComputerClient("127.0.0.1", 8080, device);
+                break;
             }
             else System.out.println("Not a valid option!");
         }
