@@ -9,13 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96cf8751-30c4-4213-bbc6-ddff184b7324" name="Changes" comment="added reading data for printer class">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Computer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Computer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sebastiantrasca/ComputerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sebastiantrasca/ComputerClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Printer.java" afterDir="false" />
+    <list default="true" id="96cf8751-30c4-4213-bbc6-ddff184b7324" name="Changes" comment="attempted to fix serialization">
       <change beforePath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Record.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Router.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +86,7 @@
       <workItem from="1715786765337" duration="94000" />
       <workItem from="1715788692882" duration="1878000" />
       <workItem from="1715864953913" duration="7301000" />
-      <workItem from="1715945373993" duration="6687000" />
+      <workItem from="1715945373993" duration="6842000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -173,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715947463131</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="attempted to fix serialization">
+      <option name="closed" value="true" />
+      <created>1715955150990</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1715955150990</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +193,7 @@
     <MESSAGE value="made a type enum for record class" />
     <MESSAGE value="changed reading data for computer class" />
     <MESSAGE value="added reading data for printer class" />
-    <option name="LAST_COMMIT_MESSAGE" value="added reading data for printer class" />
+    <MESSAGE value="attempted to fix serialization" />
+    <option name="LAST_COMMIT_MESSAGE" value="attempted to fix serialization" />
   </component>
 </project>
