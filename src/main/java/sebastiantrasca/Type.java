@@ -14,4 +14,9 @@ public enum Type {
     public Class<?> getClazz() {
         return clazz;
     }
+
+    @Override
+    public String toString() {
+        return "Type{" + clazz + "}";
+    }
 }

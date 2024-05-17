@@ -19,7 +19,7 @@ public class Computer{
     private double cpuSpeed;
     private String cpuType;
     private int diskSpace;
-    private String floppy;
+    private boolean floppy;
     private String formFactor;
     private String operatingSystem;
     private Byte osAddressWidth;
@@ -28,7 +28,7 @@ public class Computer{
     private boolean isVirtual;
 
     @JsonCreator
-    public Computer(@JsonProperty("cdRom") boolean cdRom,@JsonProperty("cdSpeed") double cdSpeed, @JsonProperty("chassisType") String chassisType,@JsonProperty("cpuCoreCount") int cpuCoreCount, @JsonProperty("cpuCoreThread") int cpuCoreThread,@JsonProperty("cpuCount") int cpuCount,@JsonProperty("cpuName") String cpuName,@JsonProperty("cpuSpeed") double cpuSpeed,@JsonProperty("cpuType") String cpuType,@JsonProperty("diskSpace") int diskSpace,@JsonProperty("floppy") String floppy,@JsonProperty("formFactor") String formFactor, @JsonProperty("operatingSystem") String operatingSystem, @JsonProperty("osAddressWidth") Byte osAddressWidth, @JsonProperty("osVersion") String osVersion, @JsonProperty("ram") int ram, @JsonProperty("isVirtual") boolean isVirtual) {
+    public Computer(@JsonProperty("cdRom") boolean cdRom,@JsonProperty("cdSpeed") double cdSpeed, @JsonProperty("chassisType") String chassisType,@JsonProperty("cpuCoreCount") int cpuCoreCount, @JsonProperty("cpuCoreThread") int cpuCoreThread,@JsonProperty("cpuCount") int cpuCount,@JsonProperty("cpuName") String cpuName,@JsonProperty("cpuSpeed") double cpuSpeed,@JsonProperty("cpuType") String cpuType,@JsonProperty("diskSpace") int diskSpace,@JsonProperty("floppy") boolean floppy,@JsonProperty("formFactor") String formFactor, @JsonProperty("operatingSystem") String operatingSystem, @JsonProperty("osAddressWidth") Byte osAddressWidth, @JsonProperty("osVersion") String osVersion, @JsonProperty("ram") int ram, @JsonProperty("isVirtual") boolean isVirtual) {
         this.cdRom = cdRom;
         this.cdSpeed = cdSpeed;
         this.chassisType = chassisType;
