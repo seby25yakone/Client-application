@@ -88,9 +88,27 @@ public class ComputerClient {
                 Computer clientComp = new Computer(cdRom,cdSpeed,chassisType,cpuCoreCount,cpuCoreThread,cpuCount, cpuName, cpuSpeed, cpuType, diskSpace, floppy, formFactor, operatingSystem, osAddressWidth, osVersion, ram, isVirtual);
                 Record<Computer> device = new Record<>(0, Type.COMPUTER, clientComp);
                 ComputerClient client = new ComputerClient("127.0.0.1", 8080, device);
+                break;
             }
             else if(line.toLowerCase().equals("p")){
-
+                System.out.println("Enter printer type: ");
+                String printerType = sc.nextLine();
+                System.out.println("Enter printer resolution: ");
+                String resolution = sc.nextLine();
+                System.out.println("Enter printer color type (full-color/b&w): ");
+                String color = sc.nextLine();
+                System.out.println("Enter colored printing speed (enter 0 if printer is b&w only): ");
+                double colorSpeed = sc.nextDouble();
+                System.out.println("Enter b&w printing speed: ");
+                double monoSpeed = sc.nextDouble();
+                System.out.println("Enter primary paper format: ");
+                String format = sc.nextLine();
+                System.out.println("Enter printer connection type(s): ");
+                String connectionType = sc.nextLine();
+                Printer clientPrinter = new Printer(printerType,resolution,color,colorSpeed,monoSpeed,format,connectionType);
+                Record<Printer> device = new Record<>(0,Type.PRINTER, clientPrinter);
+                ComputerClient client = new ComputerClient("127.0.0.1", 8080, device);
+                break;
             }
             else if (line.toLowerCase().equals("r")){
 
