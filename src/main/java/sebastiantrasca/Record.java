@@ -15,15 +15,18 @@ public class Record<T> {
         this.deviceInfo = deviceInfo;
     }
 
+    @JsonProperty("id")
     public long getId() {
         return id;
     }
 
-    public Type getType() {
+    @JsonProperty("deviceType")
+    public Type getDeviceType() {
         return deviceType;
     }
 
-    public String getDevice() {
+    @JsonProperty("deviceInfo")
+    public String getDeviceInfo() {
         return deviceInfo;
     }
 
