@@ -54,11 +54,11 @@ public class Printer {
     @Override
     public String toString() {
         return "Printer type: " + printerType +
-                "\n Resolution: " + resolution +
-                "\n Color: " + color +
-                "\n Color printing speed: " + colorSpeed +
-                "\n B&W printing speed: " + monoSpeed +
-                "\n Primary paper format: " + format +
-                "\n Connection type: " + connectionType + '\n';
+                "\nResolution: " + resolution +
+                "\nColor: " + color +
+                "\nColor printing speed: " + colorSpeed +
+                "\nB&W printing speed: " + monoSpeed +
+                "\nPrimary paper format: " + format +
+                "\nConnection type: " + connectionType + '\n';
     }
 }

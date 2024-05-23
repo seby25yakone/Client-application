@@ -51,22 +51,22 @@ public class Computer{
     @Override
     public String toString() {
         return "CD-ROM: " + cdRom +
-                "\n CD Speed: " + cdSpeed +
-                "\n Chassis type:" + chassisType +
-                "\n CPU core count: " + cpuCoreCount +
-                "\n CPU core thread: " + cpuCoreThread +
-                "\n CPU count: " + cpuCount +
-                "\n CPU name: " + cpuName +
-                "\n CPU speed:" + cpuSpeed +
-                "\n CPU type: " + cpuType +
-                "\n Disk space(GB): " + diskSpace +
-                "\n Floppy: " + floppy +
-                "\n Form factor: " + formFactor +
-                "\n Operating system: " + operatingSystem +
-                "\n OS address width: " + osAddressWidth +
-                "\n OS version: " + osVersion +
-                "\n RAM(MB): " + ram +
-                "\n Is virtual: " + isVirtual + "\n";
+                "\nCD Speed: " + cdSpeed +
+                "\nChassis type:" + chassisType +
+                "\nCPU core count: " + cpuCoreCount +
+                "\nCPU core thread: " + cpuCoreThread +
+                "\nCPU count: " + cpuCount +
+                "\nCPU name: " + cpuName +
+                "\nCPU speed:" + cpuSpeed +
+                "\nCPU type: " + cpuType +
+                "\nDisk space(GB): " + diskSpace +
+                "\nFloppy: " + floppy +
+                "\nForm factor: " + formFactor +
+                "\nOperating system: " + operatingSystem +
+                "\nOS address width: " + osAddressWidth +
+                "\nOS version: " + osVersion +
+                "\nRAM(MB): " + ram +
+                "\nIs virtual: " + isVirtual + "\n";
     }
 
     public boolean isCdRom() {

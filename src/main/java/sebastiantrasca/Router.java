@@ -65,16 +65,14 @@ public class Router {
 
     @Override
     public String toString() {
-        return "Router{" +
-                "lanPorts=" + lanPorts +
-                ", wanPorts=" + wanPorts +
-                ", ethernetRate=" + ethernetRate +
-                ", wifiRate=" + wifiRate +
-                ", antennaeType='" + antennaeType + '\'' +
-                ", frequency=" + frequency +
-                ", usbPort=" + usbPort +
-                ", wifiStandard='" + wifiStandard + '\'' +
-                ", security='" + security + '\'' +
-                '}';
+        return "LAN ports: " + lanPorts +
+                "\nWAN ports: " + wanPorts +
+                "\nEthernet rate: " + ethernetRate +
+                "\nWi-Fi rate: " + wifiRate +
+                "\nAntenna type: " + antennaeType +
+                "\nFrequency: " + frequency +
+                "\nUSB port: " + usbPort +
+                "\nWi-Fi standard: " + wifiStandard +
+                "\nSecurity: " + security + '\n';
     }
 }
