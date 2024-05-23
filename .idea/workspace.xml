@@ -9,9 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96cf8751-30c4-4213-bbc6-ddff184b7324" name="Changes" comment="fixed serialization issues">
+    <list default="true" id="96cf8751-30c4-4213-bbc6-ddff184b7324" name="Changes" comment="fixed issues with reading strings caused by Scanner's nextLine() function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sebastiantrasca/ComputerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sebastiantrasca/ComputerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Computer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Computer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -48,9 +50,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "json",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/java/ClientServer3 - Threads/ComputerClient",
+    "last_opened_file_path": "C:/java/ClientServer3 - Threads/ComputerServer",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -62,6 +66,14 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="sebastiantrasca" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -91,7 +103,10 @@
       <workItem from="1716133012687" duration="121000" />
       <workItem from="1716203915068" duration="32000" />
       <workItem from="1716222067465" duration="875000" />
-      <workItem from="1716301544097" duration="1541000" />
+      <workItem from="1716301544097" duration="3030000" />
+      <workItem from="1716322339749" duration="942000" />
+      <workItem from="1716360853211" duration="70000" />
+      <workItem from="1716470665532" duration="1668000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -197,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716222934631</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fixed issues with reading strings caused by Scanner's nextLine() function">
+      <option name="closed" value="true" />
+      <created>1716303150384</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1716303150384</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,6 +240,7 @@
     <MESSAGE value="attempted to fix serialization" />
     <MESSAGE value="removed unnecessary getter" />
     <MESSAGE value="fixed serialization issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed serialization issues" />
+    <MESSAGE value="fixed issues with reading strings caused by Scanner's nextLine() function" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed issues with reading strings caused by Scanner's nextLine() function" />
   </component>
 </project>
