@@ -9,10 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96cf8751-30c4-4213-bbc6-ddff184b7324" name="Changes" comment="fixed issues with reading strings caused by Scanner's nextLine() function">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Computer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Computer.java" afterDir="false" />
+    <list default="true" id="96cf8751-30c4-4213-bbc6-ddff184b7324" name="Changes" comment="changed computer class toString">
+      <change beforePath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Printer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +104,7 @@
       <workItem from="1716301544097" duration="3030000" />
       <workItem from="1716322339749" duration="942000" />
       <workItem from="1716360853211" duration="70000" />
-      <workItem from="1716470665532" duration="1668000" />
+      <workItem from="1716470665532" duration="1840000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -220,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716303150384</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="changed computer class toString">
+      <option name="closed" value="true" />
+      <created>1716472372331</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1716472372331</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +247,7 @@
     <MESSAGE value="removed unnecessary getter" />
     <MESSAGE value="fixed serialization issues" />
     <MESSAGE value="fixed issues with reading strings caused by Scanner's nextLine() function" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed issues with reading strings caused by Scanner's nextLine() function" />
+    <MESSAGE value="changed computer class toString" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed computer class toString" />
   </component>
 </project>
