@@ -7,24 +7,22 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.SQLOutput;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class ComputerClient {
     private Socket clientSocket;
     private BufferedReader in;
     private DataOutputStream out;
     private Record clientDevice;
-    public ComputerClient(String ip, int port, Record device) throws IOException{
+
+    public ComputerClient(String ip, int port, Record device) throws IOException {
         clientDevice = device;
         clientSocket = new Socket(ip, port);
         System.out.println("Connected");
         Instant now = Instant.now();
         Random rand = new Random();
-        Long randlong = rand.nextLong()+1L;
-        long id = now.getEpochSecond()/(randlong*1000) + rand.nextLong()*3400;
+        Long randlong = rand.nextLong() + 1L;
+        long id = now.getEpochSecond() / (randlong * 1000) + rand.nextLong() * 3400;
         clientDevice.setId(id);
         in = new BufferedReader(new InputStreamReader(System.in));
         out = new DataOutputStream(clientSocket.getOutputStream());
@@ -35,18 +33,16 @@ public class ComputerClient {
         out.write(json.getBytes());
         out.flush();
         String line;
-        try{
+        try {
             line = in.readLine();
-            while(!line.equals("Over")){
-                out.writeUTF(clientDevice.getId()+" says: "+line);
+            while (!line.equals("Over")) {
+                out.writeUTF(clientDevice.getId() + " says: " + line);
                 line = in.readLine();
             }
-        } catch(IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Socket read error!");
-        }
-
-        finally{
+        } finally {
             in.close();
             out.close();
             clientSocket.close();
@@ -59,6 +55,8 @@ public class ComputerClient {
         ObjectMapper mapper = new ObjectMapper();
         String directoryPath = "/src/main/config";
         File directory = new File(directoryPath);
+        Device selectedDevice = null;
+        Map<String,String> fields = null;
         try {
             Files.list(Paths.get(directoryPath))
                     .filter(Files::isRegularFile)
@@ -83,15 +81,22 @@ public class ComputerClient {
             int id = sc.nextInt();
             for(Device device : availableDevices){
                 if(device.getClassId() == id){
-                    Device selectedDevice = device;
+                    selectedDevice = device;
+                    fields = selectedDevice.getFields();
                     ok = true;
                     break;
                 }
             }
             if(ok == false)
                 System.out.println("Invalid class ID, please try again!");
+            else break;
         }
 
+        for(String key : fields.keySet()){
+            System.out.println("Enter new value for " + key + ": ");
+            String newValue = sc.nextLine();
+            fields.put(key, newValue);
+        }
+        selectedDevice.setFields(fields);
     }
-
 }
