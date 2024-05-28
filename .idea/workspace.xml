@@ -9,10 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="96cf8751-30c4-4213-bbc6-ddff184b7324" name="Changes" comment="changed router class toString">
-      <change afterPath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Device.java" afterDir="false" />
+    <list default="true" id="96cf8751-30c4-4213-bbc6-ddff184b7324" name="Changes" comment="created Device class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sebastiantrasca/ComputerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sebastiantrasca/ComputerClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Device.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/sebastiantrasca/Record.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +110,7 @@
       <workItem from="1716470665532" duration="3847000" />
       <workItem from="1716572880508" duration="1663000" />
       <workItem from="1716825860909" duration="593000" />
-      <workItem from="1716901830680" duration="1349000" />
+      <workItem from="1716901830680" duration="2787000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -248,7 +248,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716472883957</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="created Device class">
+      <option name="closed" value="true" />
+      <created>1716903254505</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1716903254505</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,6 +280,7 @@
     <MESSAGE value="changed computer class toString" />
     <MESSAGE value="changed printer class toString" />
     <MESSAGE value="changed router class toString" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed router class toString" />
+    <MESSAGE value="created Device class" />
+    <option name="LAST_COMMIT_MESSAGE" value="created Device class" />
   </component>
 </project>

@@ -43,4 +43,9 @@ public class Device {
     public void setFields(Map<String, String> fields) {
         this.fields = fields;
     }
+
+    public void setFieldValue(String key, String value){
+        fields.replace(key, value);
+    }
+
 }

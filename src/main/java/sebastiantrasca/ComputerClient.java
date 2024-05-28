@@ -3,6 +3,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
 import java.net.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.SQLOutput;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -14,8 +16,8 @@ public class ComputerClient {
     private Socket clientSocket;
     private BufferedReader in;
     private DataOutputStream out;
-    private Record<?> clientDevice;
-    public ComputerClient(String ip, int port, Record<?> device) throws IOException{
+    private Record clientDevice;
+    public ComputerClient(String ip, int port, Record device) throws IOException{
         clientDevice = device;
         clientSocket = new Socket(ip, port);
         System.out.println("Connected");
@@ -53,7 +55,42 @@ public class ComputerClient {
 
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
+        List<Device> availableDevices = new ArrayList<Device>();
         ObjectMapper mapper = new ObjectMapper();
+        String directoryPath = "/src/main/config";
+        File directory = new File(directoryPath);
+        try {
+            Files.list(Paths.get(directoryPath))
+                    .filter(Files::isRegularFile)
+                    .filter(path -> path.toString().endsWith(".json"))
+                    .forEach(path -> {
+                        try {
+                            Device device = mapper.readValue(path.toFile(), Device.class);
+                            availableDevices.add(device);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        while(true){
+            boolean ok = false;
+            System.out.println("Choose device type:");
+            for(Device device : availableDevices){
+                System.out.println("For " + device.getType() + " enter " + device.getClassId());
+            }
+            int id = sc.nextInt();
+            for(Device device : availableDevices){
+                if(device.getClassId() == id){
+                    Device selectedDevice = device;
+                    ok = true;
+                    break;
+                }
+            }
+            if(ok == false)
+                System.out.println("Invalid class ID, please try again!");
+        }
 
     }
 
