@@ -1,0 +1,16 @@
+{
+    "classId":3,
+    "type":"Router",
+    "properties":
+    {
+        "lanPorts":"numeric",
+        "wanPorts":"numeric",
+        "ethernetTransferRate":"numeric",
+        "wifiTransferRate":"numeric",
+        "antennaType":"text",
+        "frequency":"numeric",
+        "hasUSBPort":"true/false",
+        "wifiStandard":"text",
+        "security":"text"
+    }
+}

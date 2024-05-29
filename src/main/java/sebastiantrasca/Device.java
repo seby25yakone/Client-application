@@ -48,4 +48,10 @@ public class Device {
         fields.replace(key, value);
     }
 
+    @Override
+    public String toString() {
+        return "classId: " + classId +
+                "\n Type: " + type +
+                "\n Properties: \n" + fields;
+    }
 }

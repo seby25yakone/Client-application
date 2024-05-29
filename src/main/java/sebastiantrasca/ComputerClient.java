@@ -3,9 +3,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
 import java.net.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.sql.SQLOutput;
 import java.time.Instant;
 import java.util.*;
 
@@ -53,22 +50,24 @@ public class ComputerClient {
         Scanner sc = new Scanner(System.in);
         List<Device> availableDevices = new ArrayList<Device>();
         ObjectMapper mapper = new ObjectMapper();
-        String directoryPath = "/src/main/config";
-        File directory = new File(directoryPath);
+
         Device selectedDevice = null;
         Map<String,String> fields = null;
+        String directoryPath = "src/main/config";
+        File directory = new File(directoryPath);
+        FileFilter filter = new FileFilter() {
+
+            public boolean accept(File f)
+            {
+                return f.getName().endsWith(".json");
+            }
+        };
+        File[] files = directory.listFiles(filter);
         try {
-            Files.list(Paths.get(directoryPath))
-                    .filter(Files::isRegularFile)
-                    .filter(path -> path.toString().endsWith(".json"))
-                    .forEach(path -> {
-                        try {
-                            Device device = mapper.readValue(path.toFile(), Device.class);
-                            availableDevices.add(device);
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    });
+            for(File file:files) {
+                Device device = mapper.readValue(file, Device.class);
+                availableDevices.add(device);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -79,6 +78,7 @@ public class ComputerClient {
                 System.out.println("For " + device.getType() + " enter " + device.getClassId());
             }
             int id = sc.nextInt();
+            sc.nextLine();
             for(Device device : availableDevices){
                 if(device.getClassId() == id){
                     selectedDevice = device;
@@ -98,5 +98,6 @@ public class ComputerClient {
             fields.put(key, newValue);
         }
         selectedDevice.setFields(fields);
+        System.out.println(selectedDevice);
     }
 }

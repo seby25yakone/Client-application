@@ -1,0 +1,24 @@
+{
+    "classId":1,
+    "type":"Computer",
+    "properties":
+    {
+        "cdRom":"true/false",
+        "cdSpeed":"numeric",
+        "chassisType":"text",
+        "cpuCoreCount":"numeric",
+        "cpuCoreThread":"numeric",
+        "cpuCount":"numeric",
+        "cpuName":"text",
+        "cpuSpeed":"numeric",
+        "cpuType":"text",
+        "diskSpace":"numeric",
+        "floppy":"true/false",
+        "formFactor":"text",
+        "operatingSystem":"text",
+        "osAddressWidth":"numeric",
+        "osVersion":"text",
+        "ram":"numeric",
+        "isVirtual":"true/false"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "classId":2,
+    "type":"Printer",
+    "properties":
+    {
+        "printerType":"text",
+        "resolutionX":"numeric",
+        "resolutionY":"numeric",
+        "colorType":"text",
+        "colorPrintingSpeed":"numeric",
+        "bwPrintingSpeed":"numeric",
+        "primaryPaperFormat":"text",
+        "connectionType":"text"
+    }
+}
