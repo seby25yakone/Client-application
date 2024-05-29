@@ -31,4 +31,10 @@ public class Record {
     public void setDevice(Device device) {
         this.device = device;
     }
+
+    @Override
+    public String toString() {
+        return "ID: " + id +
+                "\n Device info:\n" + device;
+    }
 }

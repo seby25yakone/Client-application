@@ -98,6 +98,7 @@ public class ComputerClient {
             fields.put(key, newValue);
         }
         selectedDevice.setFields(fields);
-        System.out.println(selectedDevice);
+        Record clientRecord = new Record(0,selectedDevice);
+        ComputerClient client = new ComputerClient("127.0.0.1", 8080, clientRecord);
     }
 }
