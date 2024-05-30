@@ -1,5 +1,7 @@
 package sebastiantrasca;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sebastiantrasca.Device;
+import com.sebastiantrasca.DeviceRecord;
 
 import java.io.*;
 import java.net.*;
@@ -10,9 +12,9 @@ public class ComputerClient {
     private Socket clientSocket;
     private BufferedReader in;
     private DataOutputStream out;
-    private Record clientDevice;
+    private DeviceRecord clientDevice;
 
-    public ComputerClient(String ip, int port, Record device) throws IOException {
+    public ComputerClient(String ip, int port, DeviceRecord device) throws IOException {
         clientDevice = device;
         clientSocket = new Socket(ip, port);
         System.out.println("Connected");
@@ -98,7 +100,7 @@ public class ComputerClient {
             fields.put(key, newValue);
         }
         selectedDevice.setFields(fields);
-        Record clientRecord = new Record(0,selectedDevice);
+        DeviceRecord clientRecord = new DeviceRecord(0,selectedDevice);
         ComputerClient client = new ComputerClient("127.0.0.1", 8080, clientRecord);
     }
 }
